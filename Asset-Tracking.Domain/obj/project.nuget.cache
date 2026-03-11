@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "g1NWX0pEKO0=",
+  "success": true,
+  "projectFilePath": "D:\\01_Projects\\Asset-Tracking\\Asset-Tracking.Domain\\Asset-Tracking.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Torgbe-Desmond\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0\\microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
