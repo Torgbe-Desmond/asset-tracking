@@ -18,7 +18,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
     {   /// <summary>
         /// return all existing asset maintenaces 
-        /// </summary
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<AssetMaintenanceResponseDto>>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll(CancellationToken ct)
@@ -36,7 +36,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// return an existing asset maintenace
-        /// </summary
+        /// </summary>
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(ApiResponse<AssetMaintenanceResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -64,7 +64,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// create a new asset maintenace
-        /// </summary
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<AssetMaintenanceResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status400BadRequest)]
@@ -83,7 +83,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// update an existing asset maintenace
-        /// </summary
+        /// </summary>
         [HttpPatch("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -105,7 +105,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// delete an existing asset maintenace
-        /// </summary
+        /// </summary>
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]

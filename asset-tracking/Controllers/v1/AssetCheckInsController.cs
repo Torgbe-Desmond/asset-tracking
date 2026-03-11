@@ -84,7 +84,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// updates an existing asset checkin by id
-        /// </summary
+        /// </summary>
         [HttpPatch("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -108,7 +108,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// deletes an existing asset checkin by id
-        /// </summary
+        /// </summary>
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

@@ -16,10 +16,10 @@ namespace Asset_Tracking_Api.Controllers.v1
     [ApiVersion("1.0")]
     public class AssetImageController(ISender send) : ControllerBase
     {
-        [HttpGet]
         /// <summary>
         /// return all existing asset images history 
-        /// </summary
+        /// </summary>
+        [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<AssetImageResponseDto>>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll(CancellationToken ct)
         {
@@ -36,7 +36,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// returns am existing asset event image by id
-        /// </summary
+        /// </summary>
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(ApiResponse<AssetImageResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -64,7 +64,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// creates a new asset event image
-        /// </summary
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<AssetImageResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status400BadRequest)]
@@ -83,7 +83,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// updates am existing asset event image by id
-        /// </summary
+        /// </summary>
         [HttpPatch("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -105,7 +105,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// deletes am existing asset event image by id
-        /// </summary
+        /// </summary>
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]

@@ -18,7 +18,7 @@ namespace Asset_Tracking_Api.Controllers.v1
     {
         /// <summary>
         /// returns all existing asset disposals
-        /// </summary
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<AssetDisposeResponseDto>>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll(CancellationToken ct)
@@ -36,7 +36,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// returns am existing asset disposal by id
-        /// </summary
+        /// </summary>
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(ApiResponse<AssetDisposeResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -64,7 +64,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// creates a new asset disposals
-        /// </summary
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<AssetDisposeResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status400BadRequest)]
@@ -84,7 +84,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// updates am existing asset disposal by id
-        /// </summary
+        /// </summary>
         [HttpPatch("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -107,7 +107,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// deletes am existing asset disposal by id
-        /// </summary
+        /// </summary>
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]

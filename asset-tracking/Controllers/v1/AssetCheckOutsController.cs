@@ -19,7 +19,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// returns all existing asset checkouts
-        /// </summary
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<AssetCheckOutResponseDto>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -39,7 +39,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// returns an existing asset checkouts by id
-        /// </summary
+        /// </summary>
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(ApiResponse<AssetCheckOutResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -67,7 +67,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// create a new asset checkout
-        /// </summary
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<AssetCheckOutResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status400BadRequest)]
@@ -86,7 +86,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// updates an existing asset checkout by id
-        /// </summary
+        /// </summary>
         [HttpPatch("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -109,7 +109,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// deletes an existing asset checkout by id
-        /// </summary
+        /// </summary>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

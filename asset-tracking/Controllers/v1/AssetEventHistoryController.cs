@@ -19,7 +19,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// returns am existing asset disposal by id
-        /// </summary
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<AssetEventHistoryResponseDto>>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll(CancellationToken ct)
@@ -37,7 +37,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// returns am existing asset event history by id
-        /// </summary
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ApiResponse<AssetEventHistoryDetailsResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -65,7 +65,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// creates a new asset event history 
-        /// </summary
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<AssetEventHistoryResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status400BadRequest)]
@@ -84,7 +84,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// updates am existing asset event history by id
-        /// </summary
+        /// </summary>
         [HttpPatch("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -106,7 +106,7 @@ namespace Asset_Tracking_Api.Controllers.v1
 
         /// <summary>
         /// deletes am existing asset event history by id
-        /// </summary
+        /// </summary>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
