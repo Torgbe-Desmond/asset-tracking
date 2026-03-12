@@ -19,6 +19,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// returns all asset categories
         /// </summary>
+        /// <response code="200">Returns the requested category.</response>
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<AssetCategoryResponseDto>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]

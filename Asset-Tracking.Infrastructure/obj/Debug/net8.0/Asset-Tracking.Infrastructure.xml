@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Asset-Tracking.Infrastructure</name>
+    </assembly>
+    <members>
+        <member name="T:Asset_Tracking.Infrastructure.Migrations.initialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Asset_Tracking.Infrastructure.Migrations.initialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Asset_Tracking.Infrastructure.Migrations.initialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Asset_Tracking.Infrastructure.Migrations.initialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

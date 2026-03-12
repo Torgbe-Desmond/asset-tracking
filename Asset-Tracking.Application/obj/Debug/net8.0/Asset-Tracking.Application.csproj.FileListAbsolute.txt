@@ -50,3 +50,8 @@ D:\01_Projects\Asset-Tracking\Asset-Tracking.Application\obj\Debug\net8.0\Asset-
 D:\01_Projects\Asset-Tracking\Asset-Tracking.Application\obj\Debug\net8.0\refint\Asset-Tracking.Application.dll
 D:\01_Projects\Asset-Tracking\Asset-Tracking.Application\obj\Debug\net8.0\Asset-Tracking.Application.pdb
 D:\01_Projects\Asset-Tracking\Asset-Tracking.Application\obj\Debug\net8.0\ref\Asset-Tracking.Application.dll
+D:\01_Projects\Asset-Tracking\Asset-Tracking.Application\obj\Debug\net8.0\Asset-Tracking.Application.sourcelink.json
+D:\01_Projects\Asset-Tracking\Asset-Tracking.Application\bin\Debug\net8.0\Asset-Tracking.Application.xml
+D:\01_Projects\Asset-Tracking\Asset-Tracking.Application\bin\Debug\net8.0\Asset-Tracking.Infrastructure.xml
+D:\01_Projects\Asset-Tracking\Asset-Tracking.Application\bin\Debug\net8.0\Asset-Tracking.Domain.xml
+D:\01_Projects\Asset-Tracking\Asset-Tracking.Application\obj\Debug\net8.0\Asset-Tracking.Application.xml
