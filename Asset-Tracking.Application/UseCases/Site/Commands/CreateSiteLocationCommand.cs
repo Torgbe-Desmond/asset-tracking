@@ -1,4 +1,4 @@
-﻿using Asset_Tracking.Application.Common.Site;
+﻿using Asset_Tracking.Application.Common.Dtos.Site;
 using Asset_Tracking.Domain.Entities;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;

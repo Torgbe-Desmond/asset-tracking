@@ -1,24 +1,22 @@
-﻿using Asset_Tracking.Application.Common.Asset;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Asset.Queries
 {
-    public record GetAssetEventHistoryByIdQuery(string AssetEventHistoryId) : IRequest<AssetEventHistoryDetailsResponseDto>;
+    public record GetAssetEventHistoryByIdQuery(string AssetEventHistoryId) : IRequest<AssetEventHistoryDetailsResponseDto?>;
 
-    public class GetAssetEventHistoryDetailsHandler(IAssetEventHistoryRepository eventHistoryRepository) : IRequestHandler<GetAssetEventHistoryByIdQuery, AssetEventHistoryDetailsResponseDto>
+    public class GetAssetEventHistoryDetailsHandler(IAssetEventHistoryRepository eventHistoryRepository) : IRequestHandler<GetAssetEventHistoryByIdQuery, AssetEventHistoryDetailsResponseDto?>
     {
-        public async Task<AssetEventHistoryDetailsResponseDto> Handle(GetAssetEventHistoryByIdQuery request, CancellationToken cancellationToken)
+        public async Task<AssetEventHistoryDetailsResponseDto?> Handle(GetAssetEventHistoryByIdQuery request, CancellationToken cancellationToken)
         {
-
 
             if (request.AssetEventHistoryId == null)
                 throw new ArgumentNullException("AssetEventHistoryId is required.", nameof(request.AssetEventHistoryId));
 
             var eventHistory = await eventHistoryRepository.GetByIdAsync(request.AssetEventHistoryId);
 
-            if (eventHistory == null)
-                throw new KeyNotFoundException("No event history found.");
+            if (eventHistory == null) return null;
 
             var dtos = new AssetEventHistoryDetailsResponseDto()
             {
@@ -61,9 +59,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
                       AssetConditionDescription = eventHistory.Asset.AssetConditionDescription,
                       IsAssetInGoodCondition = eventHistory.Asset.IsAssetInGoodCondition,
                       IsRepairRequired = eventHistory.Asset.IsRepairRequired,
-                      //DateCreated = eventHistory.Asset.DateCreated,
                       CreatedBy = eventHistory.Asset.CreatedBy,
-                      //DateUpdated = eventHistory.Asset.DateUpdated,
                 } : null,
 
             };

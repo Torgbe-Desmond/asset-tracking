@@ -1,5 +1,4 @@
-﻿using Asset_Tracking.Application.Common.Site;
-using Asset_Tracking.Domain.Interfaces;
+﻿using Asset_Tracking.Application.Common.Dtos.Site;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Site.Commands
@@ -7,12 +6,12 @@ namespace Asset_Tracking.Application.UseCases.Site.Commands
     public record UpdateSiteLocationCommand(
        int SiteLocationId,
        SiteLocationUpdateRequestDto SiteLocation)
-       : IRequest<SiteLocationResponseDto>;
+       : IRequest<bool>;
 
     public class UpdateSiteLocationHandler(Domain.Interfaces.ISiteLocationRepository siteLocationRepository)
-        : IRequestHandler<UpdateSiteLocationCommand, SiteLocationResponseDto>
+        : IRequestHandler<UpdateSiteLocationCommand, bool>
     {
-        public async Task<SiteLocationResponseDto> Handle(
+        public async Task<bool> Handle(
             UpdateSiteLocationCommand request,
             CancellationToken cancellationToken)
         {
@@ -29,14 +28,9 @@ namespace Asset_Tracking.Application.UseCases.Site.Commands
 
             entity.DateUpdated = DateTime.UtcNow;
 
-            await siteLocationRepository.UpdateAsync(request.SiteLocationId,entity);
+            return await siteLocationRepository.UpdateAsync(request.SiteLocationId,entity);
 
-            return new SiteLocationResponseDto
-            {
-                SiteLocationId = entity.SiteLocationId,
-                Location = entity.Location,
-                SiteId = entity.SiteId
-            };
+           
         }
     }
 }

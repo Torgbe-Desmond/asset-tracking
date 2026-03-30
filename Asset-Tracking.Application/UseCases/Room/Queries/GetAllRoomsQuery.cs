@@ -1,10 +1,10 @@
-﻿using Asset_Tracking.Application.Common.Room;
+﻿using Asset_Tracking.Application.Common.Dtos.Room;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Room.Queries
 {
- 
+
 
     public record GetAllRoomsQuery() : IRequest<List<RoomResponseDto>>;
     public class GetAllRoomsRoomHandler(IRoomRepository roomRepository) : IRequestHandler<GetAllRoomsQuery, List<RoomResponseDto>>

@@ -1,8 +1,8 @@
-﻿using Asset_Tracking.Application.Common.Asset;
-using Asset_Tracking.Application.Common.Building;
-using Asset_Tracking.Application.Common.Floor;
-using Asset_Tracking.Application.Common.Room;
-using Asset_Tracking.Application.Common.Site;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
+using Asset_Tracking.Application.Common.Dtos.Building;
+using Asset_Tracking.Application.Common.Dtos.Floor;
+using Asset_Tracking.Application.Common.Dtos.Room;
+using Asset_Tracking.Application.Common.Dtos.Site;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 

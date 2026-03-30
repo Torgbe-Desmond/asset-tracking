@@ -1,13 +1,13 @@
-﻿using Asset_Tracking.Application.Common.Asset;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Asset.Queries
 {
-    public record GetAssetRepairByIdQuery(int AssetRepairId) : IRequest<AssetRepairDetailResponseDto>;
-    public class GetAssetRepairByIdHandler(IAssetRepairRepository assetRepairRepository) : IRequestHandler<GetAssetRepairByIdQuery, AssetRepairDetailResponseDto>
+    public record GetAssetRepairByIdQuery(int AssetRepairId) : IRequest<AssetRepairDetailResponseDto?>;
+    public class GetAssetRepairByIdHandler(IAssetRepairRepository assetRepairRepository) : IRequestHandler<GetAssetRepairByIdQuery, AssetRepairDetailResponseDto?>
     {
-        public async Task<AssetRepairDetailResponseDto> Handle(GetAssetRepairByIdQuery request, CancellationToken cancellationToken)
+        public async Task<AssetRepairDetailResponseDto?> Handle(GetAssetRepairByIdQuery request, CancellationToken cancellationToken)
         {
 
             if (request.AssetRepairId < 0)
@@ -15,8 +15,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
 
             var assetRepair = await assetRepairRepository.GetByIdAsync(request.AssetRepairId);
 
-            if (assetRepair == null)
-                throw new KeyNotFoundException("No repair status found.");
+            if (assetRepair == null) return null;
 
             return new AssetRepairDetailResponseDto()
             {

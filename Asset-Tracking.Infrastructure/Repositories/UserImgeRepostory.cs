@@ -30,12 +30,12 @@ namespace Asset_Tracking.Infrastructure.Repositories
         }
 
         public async Task<bool> DeleteAsync(
-            int id,
+            int UserImageId,
             CancellationToken ct = default)
         {
        
             var entity = await _dbContext.UserImages
-                .FirstOrDefaultAsync(e => e.Id == id, ct);
+                .FirstOrDefaultAsync(e => e.UserImageId == UserImageId, ct);
 
             if (entity == null)
             {
@@ -60,45 +60,45 @@ namespace Asset_Tracking.Infrastructure.Repositories
 
         }
 
-        public async Task<UserImageEntity?> GetByIdAsync(int id)
+        public async Task<UserImageEntity?> GetByIdAsync(int UserImageId)
         {
             return await _dbContext.UserImages
-                .FirstOrDefaultAsync(e => e.Id == id);
+                .FirstOrDefaultAsync(e => e.UserImageId == UserImageId);
         }
 
-        public async Task<UserImageEntity?> UpdateAsync(
-            int id,
+        public async Task<bool> UpdateAsync(
+            int UserImageId,
             UserImageEntity userImageEntity,
             CancellationToken ct = default)
         {
         
             if (userImageEntity == null)
             {
-                return null;
+                return false;
             }
 
-            if (userImageEntity.Id != id)
+            if (userImageEntity.UserImageId != UserImageId)
             {
-                return null;
+                return false;
             }
 
             var existing = await _dbContext.UserImages
-                .FirstOrDefaultAsync(e => e.Id == id, ct);
+                .FirstOrDefaultAsync(e => e.UserImageId == UserImageId, ct);
 
             if (existing == null)
             {
-                return null;
+                return false;
             }
 
             try
             {
                 _dbContext.UserImages.Update(userImageEntity);
                 await _dbContext.SaveChangesAsync(ct);
-                return existing;
+                return true;
             }
             catch (DbUpdateException)
             {
-                return null;
+                return false;
             }
         }
     }

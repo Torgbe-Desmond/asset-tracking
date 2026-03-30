@@ -53,7 +53,7 @@ namespace Asset_Tracking.Infrastructure.Repositories
             }
         }
 
-        public async Task<IEnumerable<SiteLocationEntity>> GetAllAsync(CancellationToken ct = default)
+        public async Task<IEnumerable<SiteLocationEntity>?> GetAllAsync(CancellationToken ct = default)
         {
             return await _dbContext.SiteLocations.AsNoTracking().Include(e=>e.Site)
                 .ToListAsync(ct);
@@ -65,7 +65,7 @@ namespace Asset_Tracking.Infrastructure.Repositories
             return await _dbContext.SiteLocations
                 .FirstOrDefaultAsync(e => e.SiteLocationId == id);
         }
-
+        
         public async Task<bool> UpdateAsync(
             int id,
             SiteLocationEntity roleEntity,

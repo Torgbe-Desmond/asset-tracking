@@ -1,9 +1,9 @@
-﻿using Asset_Tracking.Application.Common.Site;
+﻿using Asset_Tracking.Application.Common.Dtos.Site;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Site.Queries
 {
-    public record GetAllSiteLocationsQuery(int SiteLocationId)
+    public record GetAllSiteLocationsQuery()
   : IRequest<List<SiteLocationResponseDto>>;
 
     public class GetAllSiteLocationsHandler(Domain.Interfaces.ISiteLocationRepository siteLocationRepository)
@@ -13,7 +13,7 @@ namespace Asset_Tracking.Application.UseCases.Site.Queries
             GetAllSiteLocationsQuery request,
             CancellationToken cancellationToken)
         {
-            var allSiteLocations = await siteLocationRepository.GetAllAsync();
+            var allSiteLocations = await siteLocationRepository.GetAllAsync(cancellationToken);
 
             var dtos = allSiteLocations.Select(allSiteLocation=> new SiteLocationResponseDto
             {

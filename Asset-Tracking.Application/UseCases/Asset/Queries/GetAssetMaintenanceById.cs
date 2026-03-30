@@ -1,15 +1,15 @@
-﻿using Asset_Tracking.Application.Common.Asset;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Asset.Queries
 {
 
-    public record GetAssetMaintenanceByIdQuery(int AssetMaintenanceId) : IRequest<AssetMaintenanceResponseDto>;
+    public record GetAssetMaintenanceByIdQuery(int AssetMaintenanceId) : IRequest<AssetMaintenanceResponseDto?>;
 
-    public class GetAssetMaintenanceByIdHandler(IAssetMaintenanceRepository maintenanceRepository) : IRequestHandler<GetAssetMaintenanceByIdQuery, AssetMaintenanceResponseDto>
+    public class GetAssetMaintenanceByIdHandler(IAssetMaintenanceRepository maintenanceRepository) : IRequestHandler<GetAssetMaintenanceByIdQuery, AssetMaintenanceResponseDto?>
     {
-        public async Task<AssetMaintenanceResponseDto> Handle(GetAssetMaintenanceByIdQuery request, CancellationToken cancellationToken)
+        public async Task<AssetMaintenanceResponseDto?> Handle(GetAssetMaintenanceByIdQuery request, CancellationToken cancellationToken)
         {
 
             if (request.AssetMaintenanceId < 0)
@@ -17,8 +17,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
 
             var assetMaintenance = await maintenanceRepository.GetByIdAsync(request.AssetMaintenanceId);
 
-            if (assetMaintenance == null)
-                throw new KeyNotFoundException("No asset maintenance data found.");
+            if (assetMaintenance == null) return null;
 
 
             return new AssetMaintenanceResponseDto()

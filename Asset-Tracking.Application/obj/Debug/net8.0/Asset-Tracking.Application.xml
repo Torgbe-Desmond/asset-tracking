@@ -4,857 +4,1124 @@
         <name>Asset-Tracking.Application</name>
     </assembly>
     <members>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCategoryResponseDto.AssetCategoryId">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryRequestDto">
+            <summary>
+            Request DTO for creating or updating asset category data.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryRequestDto.AssetCategoryName" -->
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryRequestDto.DateCreated">
+            <example>2026-02-10T10:15:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryRequestDto.CreatedBy">
+            <example>inventory_admin</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryRequestDto.DateUpdated">
+            <example>2026-02-12T16:20:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryRequestDto.UpdatedBy">
+            <example>inventory_manager</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryResponseDto.AssetCategoryId">
             <summary>
             The unique identifier for the asset category.
             </summary>
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCategoryResponseDto.AssetCategoryName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryResponseDto.AssetCategoryName">
             <summary>
             The name of the category (e.g., Laptop, Furniture).
             </summary>
             <example>Electronics</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCategoryResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryResponseDto.CreatedBy">
             <summary>
             The user who created the category.
             </summary>
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCategoryResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCategoryResponseDto.UpdatedBy">
             <summary>
             The user who last updated the category, if applicable.
             </summary>
             <example>null</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto">
             <summary>
             Detailed view of an asset check-in including related entity information.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.AssetCheckInId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.AssetCheckInId">
             <example>10</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.ReturnDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.ReturnDate">
             <example>2026-03-12T14:30:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.Notes">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.Notes">
             <example>Equipment returned after project completion</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.ReturnedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.ReturnedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.StaffId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.StaffId">
             <example>STF-9982</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.DateCreated">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.DateCreated">
             <example>2026-03-10T09:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.CreatedBy">
             <example>system_admin</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.DateUpdated">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.DateUpdated">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.UpdatedBy">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInDetailsResponseDto.SiteId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInDetailsResponseDto.SiteId">
             <example>2</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto">
+            <summary>
+            Request DTO for recording asset check-in (return) data.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.ReturnDate">
+            <example>2026-03-20T14:30:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.Notes">
+            <example>Returned in good condition, minor scratch on left side.</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.ReturnedBy">
+            <example>john.doe</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.StaffId">
+            <example>EMP-00123</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.DateCreated">
+            <example>2026-03-15T09:45:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.CreatedBy">
+            <example>asset_admin</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.DateUpdated">
+            <example>2026-03-16T11:20:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.UpdatedBy">
+            <example>asset_manager</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.AssetId">
+            <example>42</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInRequestDto.SiteId">
+            <example>2</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto">
             <summary>
             Represents the details of an asset check-in transaction.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto.AssetCheckInId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto.AssetCheckInId">
             <example>10</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto.ReturnDate">
-            <example>2026-03-12T14:30:00Z</example>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto.ReturnDate">
+            <example>2026-03-12T14:30:00Z</example> 
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto.Notes">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto.Notes">
             <example>Returned in good working condition</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto.ReturnedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto.ReturnedBy">
             <example>John Doe</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto.StaffId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto.StaffId">
             <example>STF-9982</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto.UpdatedBy">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckInResponseDto.SiteId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckInResponseDto.SiteId">
             <example>2</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto">
+            <summary>
+            Detailed DTO for asset checkout information.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.AssetCheckOutId">
+            <example>28</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.AssetCheckOutDate">
+            <example>2026-03-10T09:00:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.DueDate">
+            <example>2026-06-10T23:59:59</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.Notes">
+            <example>Assigned to staff for field project use.</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.DateCreated">
+            <example>2026-03-09T14:30:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.CreatedBy">
+            <example>asset_admin</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.DateUpdated">
+            <example>2026-03-11T10:15:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.UpdatedBy">
+            <example>asset_manager</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.AssetId">
+            <example>42</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.StaffId">
+            <example>EMP-00123</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.AssignedTo">
+            <example>John Kofi Mensah</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.SiteId">
+            <example>2</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.BuildingId">
+            <example>5</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.FloorId">
+            <example>12</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.RoomId">
+            <example>34</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.RoomLocationDescription">
+            <example>Room 204 - Left corner desk near window</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.IsConfirmedEmailSent">
+            <example>true</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.EmailSentDate">
+            <example>2026-03-10T09:15:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.HasReceivedConfirmed">
+            <example>true</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.HasReceivedConfirmedDate">
+            <example>2026-03-10T10:45:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.IsSMSSent">
+            <example>false</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckoutDetailsDto.SMSSentDate">
+            <example>2026-03-10T09:20:00</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto">
             <summary>
             Represents the details of an asset check-out transaction.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.AssetCheckOutId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.AssetCheckOutId">
             <example>101</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.AssetCheckOutDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.AssetCheckOutDate">
             <example>2026-03-12T09:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.DueDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.DueDate">
             <example>2026-03-20T17:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.Notes">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.Notes">
             <example>Equipment assigned for site project</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.UpdatedBy">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.StaffId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.StaffId">
             <example>STF-9982</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.AssignedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.AssignedTo">
             <example>John Doe</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.SiteId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.SiteId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.BuildingId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.BuildingId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.FloorId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.FloorId">
             <example>3</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.RoomId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.RoomId">
             <example>12</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.RoomLocationDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.RoomLocationDescription">
             <example>Near the south entrance</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.IsConfirmedEmailSent">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.IsConfirmedEmailSent">
             <example>true</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.EmailSentDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.EmailSentDate">
             <example>2026-03-12T09:05:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.HasReceivedConfirmed">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.HasReceivedConfirmed">
             <example>false</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.HasReceivedConfirmedDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.HasReceivedConfirmedDate">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.IsSMSSent">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.IsSMSSent">
             <example>true</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetCheckOutResponseDto.SMSSentDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetCheckOutResponseDto.SMSSentDate">
             <example>2026-03-12T09:05:30Z</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetDetailDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto">
             <summary>
             Represents the full, detailed profile of an asset including all relational data.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.AssetId">
             <example>501</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.AssetName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.AssetName">
             <example>Laptop Pro 15</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.AssetTagId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.AssetTagId">
             <example>TAG-5501-ABC</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.SerialNumber">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.SerialNumber">
             <example>SN-99823344</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.AssetDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.AssetDescription">
             <example>High-performance laptop for development team.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.PurchaseFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.PurchaseFrom">
             <example>Tech Supply Store</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.PurchaseDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.PurchaseDate">
             <example>2025-01-15T00:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.Cost">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.Cost">
             <example>1500.00</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.Brand">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.Brand">
             <example>Dell</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.Model">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.Model">
             <example>XPS 15</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.AssignedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.AssignedTo">
             <example>John Doe</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.HasWarranty">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.HasWarranty">
             <example>true</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.WarrantyDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.WarrantyDate">
             <example>2027-01-15T00:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.AssetCategoryId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.AssetCategoryId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.AssetStatusId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.AssetStatusId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.SiteId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.SiteId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.BuildingId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.BuildingId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.FloorId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.FloorId">
             <example>3</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.RoomId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.RoomId">
             <example>12</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.RoomLocationDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.RoomLocationDescription">
             <example>South Wing, Room 302</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.AssetConditionDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.AssetConditionDescription">
             <example>Excellent condition, no scuffs.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.IsAssetInGoodCondition">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.IsAssetInGoodCondition">
             <example>true</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.IsRepairRequired">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.IsRepairRequired">
             <example>false</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.DateCreated">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.DateCreated">
             <example>2026-03-12T08:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto">
             <summary>
             Represents a flat, detailed summary of an asset.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.AssetName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.AssetName">
             <example>Laptop Pro 15</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.AssetDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.AssetDescription">
             <example>High-performance laptop for development team.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.PurchaseFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.PurchaseFrom">
             <example>Tech Supply Store</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.PurchaseDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.PurchaseDate">
             <example>2025-01-15T00:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.Cost">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.Cost">
             <example>1500.00</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.Brand">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.Brand">
             <example>Dell</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.Model">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.Model">
             <example>XPS 15</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.SerialNumber">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.SerialNumber">
             <example>SN-99823344</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.AssignedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.AssignedTo">
             <example>John Doe</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.HasWarranty">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.HasWarranty">
             <example>true</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.WarrantyDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.WarrantyDate">
             <example>2027-01-15T00:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.UpdatedBy">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.AssetCategoryId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.AssetCategoryId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.AssetStatusId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.AssetStatusId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.AssetImageId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.AssetImageId">
             <example>99</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.SiteId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.SiteId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.BuildingId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.BuildingId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.FloorId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.FloorId">
             <example>3</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.RoomId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.RoomId">
             <example>12</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.RoomLocationDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.RoomLocationDescription">
             <example>South Wing, Room 302</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.AssetTagId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.AssetTagId">
             <example>TAG-5501-ABC</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.AssetConditionDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.AssetConditionDescription">
             <example>Excellent condition, no scuffs.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.IsAssetInGoodCondition">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.IsAssetInGoodCondition">
             <example>true</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDetailResponseDto.IsRepairRequired">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDetailResponseDto.IsRepairRequired">
             <example>false</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetDisposeResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetDisposeResponseDto">
             <summary>
             Represents the details of an asset disposal transaction.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDisposeResponseDto.AssetDisposeId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDisposeResponseDto.AssetDisposeId">
             <example>50</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDisposeResponseDto.DisposeDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDisposeResponseDto.DisposeDate">
             <example>2026-03-12T10:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDisposeResponseDto.DisposeTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDisposeResponseDto.DisposeTo">
             <example>Local Recycling Center</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDisposeResponseDto.Notes">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDisposeResponseDto.Notes">
             <example>Unit beyond economic repair</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDisposeResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDisposeResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDisposeResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDisposeResponseDto.UpdatedBy">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDisposeResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDisposeResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto">
             <summary>
             Represents the comprehensive data structure for an asset.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.AssetId">
             <example>501</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.AssetName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.AssetName">
             <example>Laptop Pro 15</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.AssetDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.AssetDescription">
             <example>High-performance laptop for development team.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.PurchaseFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.PurchaseFrom">
             <example>Tech Supply Store</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.PurchaseDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.PurchaseDate">
             <example>2025-01-15T00:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.Cost">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.Cost">
             <example>1500.00</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.Brand">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.Brand">
             <example>Dell</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.Model">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.Model">
             <example>XPS 15</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.SerialNumber">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.SerialNumber">
             <example>SN-99823344</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.AssignedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.AssignedTo">
             <example>John Doe</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.HasWarranty">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.HasWarranty">
             <example>true</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.WarrantyDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.WarrantyDate">
             <example>2027-01-15T00:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.AssetCategoryId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.AssetCategoryId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.AssetStatusId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.AssetStatusId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.AssetImageId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.AssetImageId">
             <example>99</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.SiteId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.SiteId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.BuildingId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.BuildingId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.FloorId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.FloorId">
             <example>3</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.RoomId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.RoomId">
             <example>12</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.RoomLocationDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.RoomLocationDescription">
             <example>South Wing, Room 302</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.AssetTagId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.AssetTagId">
             <example>TAG-5501-ABC</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.AssetConditionDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.AssetConditionDescription">
             <example>Excellent condition, no scuffs.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.IsAssetInGoodCondition">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.IsAssetInGoodCondition">
             <example>true</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.IsRepairRequired">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.IsRepairRequired">
             <example>false</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.DateCreated">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.DateCreated">
             <example>2026-03-12T08:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetDto.DateUpdated">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetDto.DateUpdated">
             <example>null</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto">
             <summary>
             Represents a detailed historical record of changes, including full asset context.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.AssetEventHistoryId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.AssetEventHistoryId">
             <example>hist-5501-abc-99</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.Date">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.Date">
             <example>2026-03-12T11:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.Event">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.Event">
             <example>Status Update</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.StatusChangedFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.StatusChangedFrom">
             <example>In Storage</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.StatusChangeTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.StatusChangeTo">
             <example>Checked Out</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.LocationChangedFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.LocationChangedFrom">
             <example>Warehouse A</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.LocationChangedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.LocationChangedTo">
             <example>Site 2 - Room 101</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.SiteChangedFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.SiteChangedFrom">
             <example>Main Headquarters</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.SiteChangedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.SiteChangedTo">
             <example>North Regional Office</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.AssignedFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.AssignedFrom">
             <example>Unassigned</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.AssignedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.AssignedTo">
             <example>John Doe</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryDetailsResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryDetailsResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto">
             <summary>
             Represents a historical record of changes made to an asset.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.AssetEventHistoryId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.AssetEventHistoryId">
             <example>hist-5501-abc-99</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.Date">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.Date">
             <example>2026-03-12T11:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.Event">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.Event">
             <example>Status Update</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.StatusChangedFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.StatusChangedFrom">
             <example>In Storage</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.StatusChangeTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.StatusChangeTo">
             <example>Checked Out</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.LocationChangedFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.LocationChangedFrom">
             <example>Warehouse A</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.LocationChangedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.LocationChangedTo">
             <example>Site 2 - Room 101</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.SiteChangedFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.SiteChangedFrom">
             <example>Main Headquarters</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.SiteChangedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.SiteChangedTo">
             <example>North Regional Office</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.AssignedFrom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.AssignedFrom">
             <example>Unassigned</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.AssignedTo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.AssignedTo">
             <example>John Doe</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetEventHistoryResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetEventHistoryResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetImageResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetImageResponseDto">
             <summary>
             Represents an image associated with an asset.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetImageResponseDto.AssetImageId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetImageResponseDto.AssetImageId">
             <example>99</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetImageResponseDto.Photo">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetImageResponseDto.Photo">
             <summary>
             The photo data represented as a Base64-encoded string.
             </summary>
             <example>iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto">
             <summary>
             Represents the details of an asset maintenance record.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.AssetMaintenanceId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.AssetMaintenanceId">
             <example>201</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.MaintenanceTitle">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.MaintenanceTitle">
             <example>Annual Calibration</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.Details">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.Details">
             <example>Full system recalibration and sensor cleaning.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.DateSent">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.DateSent">
             <example>2026-03-01T08:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.MaintainedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.MaintainedBy">
             <example>Technician A</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.DateCompleted">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.DateCompleted">
             <example>2026-03-10T15:30:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.Cost">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.Cost">
             <example>150.50</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.UpdatedBy">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.MaintenanceStatusId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.MaintenanceStatusId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetMaintenanceResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetMaintenanceResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto">
             <summary>
             Represents the full details of an asset repair record.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.AssetRepairId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.AssetRepairId">
             <example>301</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.RepairTitle">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.RepairTitle">
             <example>Screen Replacement</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.Details">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.Details">
             <example>Replaced shattered digitizer and recalibrated touch sensors.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.RepairerName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.RepairerName">
             <example>TechFix Solutions</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.RepairerContactNumber">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.RepairerContactNumber">
             <example>+1-555-0199</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.Cost">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.Cost">
             <example>275.00</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.DateCompleted">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.DateCompleted">
             <example>2026-03-10</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.UpdateBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.UpdateBy">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.RepairStatusId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.RepairStatusId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.AssetReceiveDate">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.AssetReceiveDate">
             <example>2026-03-12T09:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.AssetRepairDetailResponseDto.ReceivedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.AssetRepairDetailResponseDto.ReceivedBy">
             <example>Inventory Manager</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.MaintenanceStatusResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.MaintenanceStatusResponseDto">
             <summary>
             Represents a possible status for an asset maintenance record.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.MaintenanceStatusResponseDto.MaintenanceStatusId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.MaintenanceStatusResponseDto.MaintenanceStatusId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.MaintenanceStatusResponseDto.StatusName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.MaintenanceStatusResponseDto.StatusName">
             <example>In Progress</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.MaintenanceStatusResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.MaintenanceStatusResponseDto.CreatedBy">
             <example>system_admin</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.MaintenanceStatusResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.MaintenanceStatusResponseDto.UpdatedBy">
             <example>null</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.RepairStatusResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.RepairStatusResponseDto">
             <summary>
             Represents a possible status for an asset repair record.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.RepairStatusResponseDto.RepairStatusId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.RepairStatusResponseDto.RepairStatusId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.RepairStatusResponseDto.RepairStatusName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.RepairStatusResponseDto.RepairStatusName">
             <example>In Repair</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto">
             <summary>
             Represents the full, detailed view of a scheduled asset repair.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.ScheduleRepairId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.ScheduleRepairId">
             <example>sch-9982-xyz</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.RepairTitle">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.RepairTitle">
             <example>Routine Quarterly Maintenance</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.Details">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.Details">
             <example>Preventative maintenance on hydraulic sensors.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.RepairerName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.RepairerName">
             <example>TechFix Solutions</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.RepairerContactNumber">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.RepairerContactNumber">
             <example>+1-555-0199</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.Cost">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.Cost">
             <example>250.00</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.DateCompleted">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.DateCompleted">
             <example>2026-03-20</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.RepairStatusId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.RepairStatusId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.IsScheduleApproved">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.IsScheduleApproved">
             <summary>
             Approval status: 0 = Pending, 1 = Approved, 2 = Rejected.
             </summary>
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.DateCreated">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.DateCreated">
             <example>2026-03-12T08:00:00Z</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.UpdateBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.UpdateBy">
             <example>null</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairDetailResponseDto.DateUpdated">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairDetailResponseDto.DateUpdated">
             <example>null</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto">
             <summary>
             Represents the scheduled repair information for an asset.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.ScheduleRepairId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.ScheduleRepairId">
             <example>sch-9982-xyz</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.RepairTitle">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.RepairTitle">
             <example>Routine Quarterly Maintenance</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.Details">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.Details">
             <example>Preventative maintenance on hydraulic sensors.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.RepairerName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.RepairerName">
             <example>TechFix Solutions</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.RepairerContactNumber">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.RepairerContactNumber">
             <example>+1-555-0199</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.Cost">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.Cost">
             <example>250.00</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.DateCompleted">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.DateCompleted">
             <example>2026-03-20</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.RepairStatusId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.RepairStatusId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.AssetId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.AssetId">
             <example>501</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.IsScheduleApproved">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.IsScheduleApproved">
             <summary>
             Approval status: 0 = Pending, 1 = Approved, 2 = Rejected.
             </summary>
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Asset.ScheduleRepairResponseDto.UpdateBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Asset.ScheduleRepairResponseDto.UpdateBy">
             <example>null</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Building.BuildingResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Building.BuildingResponseDto">
             <summary>
             Represents a building within a specific site location.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Building.BuildingResponseDto.BuildingId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Building.BuildingResponseDto.BuildingId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Building.BuildingResponseDto.BuildingName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Building.BuildingResponseDto.BuildingName">
             <example>Main Administration Building</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Building.BuildingResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Building.BuildingResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Building.BuildingResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Building.BuildingResponseDto.UpdatedBy">
             <example>null</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Floor.FloorResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Floor.FloorResponseDto">
             <summary>
             Represents a specific floor within a building.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Floor.FloorResponseDto.FloorId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Floor.FloorResponseDto.FloorId">
             <example>3</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Floor.FloorResponseDto.FloorName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Floor.FloorResponseDto.FloorName">
             <example>Third Floor</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Floor.FloorResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Floor.FloorResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Floor.FloorResponseDto.UpdatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Floor.FloorResponseDto.UpdatedBy">
             <example>null</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Role.RoleResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadRequestDto">
             <summary>
-            Represents a security role within the system.
+            Request DTO for creating or updating site head data.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Role.RoleResponseDto.Id">
-            <example>1234-abcd-5678-efgh</example>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadRequestDto.HeadName">
+            <example>Ama Serwaa Boateng</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Role.RoleResponseDto.Name">
-            <example>Administrator</example>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadRequestDto.HeadEmail">
+            <example>ama.boateng@company.com</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Role.RoleResponseDto.NormalizedName">
-            <example>ADMINISTRATOR</example>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadRequestDto.HeadPhoneNumber">
+            <example>+233 24 123 4567</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Role.RoleResponseDto.ConcurrencyStamp">
-            <example>a1b2c3d4-e5f6-g7h8-i9j0</example>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadRequestDto.TitleId">
+            <example>3</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Site.SiteResponseDto">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadRequestDto.CreatedBy">
+            <example>admin_user</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadResponseDto">
+            <summary>
+            Response DTO for site head data.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadResponseDto.SiteheadId">
+            <example>5</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadResponseDto.HeadName">
+            <example>Ama Serwaa Boateng</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadResponseDto.HeadEmail">
+            <example>ama.boateng@company.com</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadResponseDto.HeadPhoneNumber">
+            <example>+233 24 123 4567</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadResponseDto.TitleId">
+            <example>3</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadUpdateRequestDto">
+            <summary>
+            Request DTO for updating site head data.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadUpdateRequestDto.HeadName">
+            <example>Kofi Amoah</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadUpdateRequestDto.HeadEmail">
+            <example>kofi.amoah@company.com</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadUpdateRequestDto.HeadPhoneNumber">
+            <example>+233 27 987 6543</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteHeadUpdateRequestDto.UpdatedBy">
+            <example>hr_manager</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationRequestDto">
+            <summary>
+            Request DTO for creating or updating site location data.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationRequestDto.Location">
+            <example>Central Stores</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationRequestDto.SiteId">
+            <example>2</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationRequestDto.CreatedBy">
+            <example>stores_admin</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationResponseDto">
+            <summary>
+            Response DTO for site location data.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationResponseDto.SiteLocationId">
+            <example>15</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationResponseDto.Location">
+            <example>Central Stores</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationResponseDto.SiteId">
+            <example>2</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationUpdateRequestDto">
+            <summary>
+            Request DTO for updating site location data.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationUpdateRequestDto.Location">
+            <example>Central Stores - Zone A</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteLocationUpdateRequestDto.UpdatedBy">
+            <example>stores_manager</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto">
+            <summary>
+            Request DTO for creating or updating site/location data.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto.SiteName">
+            <example>Kumasi Regional Office</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto.SiteDescription">
+            <example>Main warehouse and distribution hub for the Ashanti Region.</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto.Address">
+            <example>12 Osei Tutu Ave, Kumasi</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto.DigitalAddress">
+            <example>AK-123-4567</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto.Email">
+            <example>kumasi.office@company.com</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto.DateCreated">
+            <example>2026-02-15T09:30:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto.CreatedBy">
+            <example>admin_user</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto.DateUpdated">
+            <example>2026-02-18T14:45:00</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteRequestDto.UpdatedBy">
+            <example>system_admin</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Site.SiteResponseDto">
             <summary>
             Represents a physical site or location in the asset tracking system.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Site.SiteResponseDto.SiteId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteResponseDto.SiteId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Site.SiteResponseDto.SiteName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteResponseDto.SiteName">
             <example>Kumasi Regional Office</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Site.SiteResponseDto.SiteDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteResponseDto.SiteDescription">
             <example>Main warehouse and distribution hub for the Ashanti Region.</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Site.SiteResponseDto.Address">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteResponseDto.Address">
             <example>12 Osei Tutu Ave, Kumasi</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Site.SiteResponseDto.DigitalAddress">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteResponseDto.DigitalAddress">
             <example>AK-123-4567</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Site.SiteResponseDto.Email">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteResponseDto.Email">
             <example>kumasi.office@company.com</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Site.SiteResponseDto.CreatedBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteResponseDto.CreatedBy">
             <example>admin_user</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Site.SiteResponseDto.UpdateBy">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Site.SiteResponseDto.UpdateBy">
             <example>null</example>
         </member>
-        <member name="T:Asset_Tracking.Application.Common.Staff.StaffResponseDto">
+        <member name="T:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto">
             <summary>
             Represents the personal and location details of a staff member.
             </summary>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.StaffId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.StaffId">
             <example>STF-9982</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.TitleId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.TitleId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.Surname">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.Surname">
             <example>Doe</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.OtherName">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.OtherName">
             <example>John Kwabena</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.TechMail">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.TechMail">
             <example>j.doe@tech-firm.com</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.SiteId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.SiteId">
             <example>2</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.BuildingId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.BuildingId">
             <example>1</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.FloorId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.FloorId">
             <example>3</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.RoomId">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.RoomId">
             <example>12</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.HasRoom">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.HasRoom">
             <example>true</example>
         </member>
-        <member name="P:Asset_Tracking.Application.Common.Staff.StaffResponseDto.RoomLocationDescription">
+        <member name="P:Asset_Tracking.Application.Common.Dtos.Staff.StaffResponseDto.RoomLocationDescription">
             <example>Located near the IT helpdesk, East Wing.</example>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.User.UserImageResponseDto">
+            <summary>
+            Represents a Data Transfer Object for delivering user profile images.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.User.UserImageResponseDto.UserImageId">
+            <summary>
+            Gets or sets the unique identifier associated with the user or image record.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.User.UserImageResponseDto.Photo">
+            <summary>
+            Gets or sets the binary content of the user's photo.
+            </summary>
+        </member>
+        <member name="T:Asset_Tracking.Application.Common.Dtos.User.UserLoginResponseDto">
+            <summary>
+            Represents a Data Transfer Object containing details for an external login provider response.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.User.UserLoginResponseDto.LoginProvider">
+            <example>Google</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.User.UserLoginResponseDto.UserId">
+            <example>u_987654321</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.User.UserLoginResponseDto.ProviderKey">
+            <example>10928374655647382910</example>
+        </member>
+        <member name="P:Asset_Tracking.Application.Common.Dtos.User.UserLoginResponseDto.ProviderDisplayName">
+            <example>Google Account</example>
         </member>
     </members>
 </doc>

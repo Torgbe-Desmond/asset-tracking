@@ -1,16 +1,16 @@
-﻿using Asset_Tracking.Application.Common.Site;
+﻿using Asset_Tracking.Application.Common.Dtos.Site;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Site.Commands
 {
     public record UpdateSiteHeadCommand(int SiteHeadId, SiteHeadUpdateRequestDto SiteHead)
-         : IRequest<SiteHeadResponseDto>;
+         : IRequest<bool>;
 
     public class UpdateSiteHeadHandler(ISiteHeadRepository siteHeadRepository)
-       : IRequestHandler<UpdateSiteHeadCommand, SiteHeadResponseDto>
+       : IRequestHandler<UpdateSiteHeadCommand, bool>
     {
-        public async Task<SiteHeadResponseDto> Handle(
+        public async Task<bool> Handle(
             UpdateSiteHeadCommand request,
             CancellationToken cancellationToken)
         {
@@ -33,16 +33,7 @@ namespace Asset_Tracking.Application.UseCases.Site.Commands
 
             entity.DateUpdated = DateTime.UtcNow;
 
-            await siteHeadRepository.UpdateAsync(request.SiteHeadId, entity);
-
-            return new SiteHeadResponseDto
-            {
-                SiteheadId = entity.SiteheadId,
-                HeadName = entity.HeadName,
-                HeadEmail = entity.HeadEmail,
-                HeadPhoneNumber = entity.HeadPhoneNumber,
-                TitleId = entity.TitleId
-            };
+            return await siteHeadRepository.UpdateAsync(request.SiteHeadId, entity);
         }
     }
 }

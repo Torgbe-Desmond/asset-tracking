@@ -1,16 +1,16 @@
-﻿using Asset_Tracking.Application.Common.Asset;
-using Asset_Tracking.Application.Common.Site;
-using Asset_Tracking.Application.Common.Staff;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
+using Asset_Tracking.Application.Common.Dtos.Site;
+using Asset_Tracking.Application.Common.Dtos.Staff;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Asset.Queries
 {
 
-    public record GetAllAssetCheckInByIdQuery(int AssetCheckInId) : IRequest<AssetCheckInDetailsResponseDto>;
-    public class GetAllAssetCheckInByIdHandler(IAssetCheckInRepository checkInRepository) : IRequestHandler<GetAllAssetCheckInByIdQuery, AssetCheckInDetailsResponseDto>
+    public record GetAllAssetCheckInByIdQuery(int AssetCheckInId) : IRequest<AssetCheckInDetailsResponseDto?>;
+    public class GetAllAssetCheckInByIdHandler(IAssetCheckInRepository checkInRepository) : IRequestHandler<GetAllAssetCheckInByIdQuery, AssetCheckInDetailsResponseDto?>
     {
-        public async Task<AssetCheckInDetailsResponseDto> Handle(GetAllAssetCheckInByIdQuery request, CancellationToken cancellationToken)
+        public async Task<AssetCheckInDetailsResponseDto?> Handle(GetAllAssetCheckInByIdQuery request, CancellationToken cancellationToken)
         {
 
             if (request.AssetCheckInId < 0)
@@ -18,8 +18,8 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
 
             var assetCheckIns = await checkInRepository.GetByIdAsync(request.AssetCheckInId);
 
-            if (assetCheckIns == null)
-                throw new KeyNotFoundException("No asset checkin found.");
+            if (assetCheckIns == null) return null;
+
 
             return new AssetCheckInDetailsResponseDto()
             {

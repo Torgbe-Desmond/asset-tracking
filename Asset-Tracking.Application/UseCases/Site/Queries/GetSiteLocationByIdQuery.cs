@@ -1,21 +1,21 @@
-﻿using Asset_Tracking.Application.Common.Site;
-using Asset_Tracking.Domain.Interfaces;
+﻿using Asset_Tracking.Application.Common.Dtos.Site;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Site.Queries
 {
     public record GetSiteLocationByIdQuery(int SiteLocationId)
-      : IRequest<SiteLocationResponseDto>;
+      : IRequest<SiteLocationResponseDto?>;
 
     public class GetSiteLocationByIdHandler(Domain.Interfaces.ISiteLocationRepository siteLocationRepository)
-     : IRequestHandler<GetSiteLocationByIdQuery, SiteLocationResponseDto>
+     : IRequestHandler<GetSiteLocationByIdQuery, SiteLocationResponseDto?>
     {
-        public async Task<SiteLocationResponseDto> Handle(
+        public async Task<SiteLocationResponseDto?> Handle(
             GetSiteLocationByIdQuery request,
             CancellationToken cancellationToken)
         {
-            var entity = await siteLocationRepository.GetByIdAsync(request.SiteLocationId)
-                ?? throw new KeyNotFoundException("Site location not found.");
+            var entity = await siteLocationRepository.GetByIdAsync(request.SiteLocationId);
+
+            if (entity == null) return null;
 
             return new SiteLocationResponseDto
             {

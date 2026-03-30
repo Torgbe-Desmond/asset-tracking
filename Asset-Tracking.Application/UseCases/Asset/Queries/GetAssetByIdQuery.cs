@@ -1,18 +1,18 @@
-﻿using Asset_Tracking.Application.Common.Asset;
-using Asset_Tracking.Application.Common.Building;
-using Asset_Tracking.Application.Common.Floor;
-using Asset_Tracking.Application.Common.Room;
-using Asset_Tracking.Application.Common.Site;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
+using Asset_Tracking.Application.Common.Dtos.Building;
+using Asset_Tracking.Application.Common.Dtos.Floor;
+using Asset_Tracking.Application.Common.Dtos.Room;
+using Asset_Tracking.Application.Common.Dtos.Site;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Asset.Queries
 {
 
-    public record GetAssetByIdQuery(int AssetId) : IRequest<AssetDetailDto>;
-    public class GetAssetHandler(IAssetRepository assetRepository) : IRequestHandler<GetAssetByIdQuery, AssetDetailDto>
+    public record GetAssetByIdQuery(int AssetId) : IRequest<AssetDetailDto?>;
+    public class GetAssetHandler(IAssetRepository assetRepository) : IRequestHandler<GetAssetByIdQuery, AssetDetailDto?>
     {
-        public async Task<AssetDetailDto> Handle(
+        public async Task<AssetDetailDto?> Handle(
             GetAssetByIdQuery request,
             CancellationToken cancellationToken)
         {
@@ -22,8 +22,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
 
             var asset = await assetRepository.GetByIdAsync(request.AssetId);
 
-            if (asset == null)
-                throw new KeyNotFoundException("No asset checkin found.");
+            if (asset == null) return null;
 
             var dtos = new AssetDetailDto
             {

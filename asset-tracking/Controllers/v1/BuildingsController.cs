@@ -1,6 +1,6 @@
 ﻿using System.Net.Mime;
 using Asp.Versioning;
-using Asset_Tracking.Application.Common.Building;
+using Asset_Tracking.Application.Common.Dtos.Building;
 using Asset_Tracking.Application.UseCases.Building.Commands;
 using Asset_Tracking.Application.UseCases.Building.Queries;
 using Asset_Tracking_Api.Common.Models;

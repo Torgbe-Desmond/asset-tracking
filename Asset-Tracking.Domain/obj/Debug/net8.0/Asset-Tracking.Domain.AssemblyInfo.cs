@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Asset-Tracking.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ece9862b16fb68a551f07be3bf0b26aaa49264e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4d02d8639b4e9093aae2d62c01da6034599e06d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Asset-Tracking.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Asset-Tracking.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

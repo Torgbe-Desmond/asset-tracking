@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Asset_Tracking.Application.Common.Site;
+﻿using Asset_Tracking.Application.Common.Dtos.Site;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Site.Queries
 {
-  
-    public record GetAllSiteHeadsQuery(int SiteHeadId)
+
+    public record GetAllSiteHeadsQuery()
     : IRequest<List<SiteHeadResponseDto>>;
 
     public class GetAllSiteHeadsHandler(ISiteHeadRepository siteHeadRepository)

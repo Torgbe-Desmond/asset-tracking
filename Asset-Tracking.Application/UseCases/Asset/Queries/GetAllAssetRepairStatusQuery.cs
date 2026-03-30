@@ -1,9 +1,9 @@
-﻿using Asset_Tracking.Application.Common.Asset;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Asset.Queries
-{ 
+{
     public record GetAllAssetRepairStatusQuery()
          : IRequest<List<RepairStatusResponseDto>>;
 

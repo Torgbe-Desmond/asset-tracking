@@ -61,7 +61,7 @@ namespace Asset_Tracking.Infrastructure.Repositories
                 .FirstOrDefaultAsync(e => e.TitleId == id);
         }
 
-        public async Task<TitleEntity?> UpdateAsync(
+        public async Task<bool> UpdateAsync(
             int id,
             TitleEntity roleEntity,
             CancellationToken ct = default)
@@ -69,12 +69,12 @@ namespace Asset_Tracking.Infrastructure.Repositories
       
             if (roleEntity == null)
             {
-                return null;
+                return false;
             }
 
             if (roleEntity.TitleId != id)
             {
-                return null;
+                return false;
             }
 
             var existing = await _dbContext.Titles
@@ -82,18 +82,18 @@ namespace Asset_Tracking.Infrastructure.Repositories
 
             if (existing == null)
             {
-                return null;
+                return false;
             }
 
             try
             {
                 _dbContext.Titles.Update(roleEntity);
                 await _dbContext.SaveChangesAsync(ct);
-                return existing;
+                return true;
             }
             catch (DbUpdateException)
             {
-                return null;
+                return false;
             }
         }
     }

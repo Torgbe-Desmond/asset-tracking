@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Asset_Tracking.Application.Common.Asset;
+using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Domain.Entities;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;

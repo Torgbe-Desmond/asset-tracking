@@ -1,4 +1,4 @@
-﻿using Asset_Tracking.Application.Common.User;
+﻿using Asset_Tracking.Application.Common.Dtos.User;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
@@ -21,7 +21,7 @@ namespace Asset_Tracking.Application.UseCases.User.Queries
 
             return new UserImageResponseDto
             {
-                Id = entity.Id,
+                UserImageId = entity.UserImageId,
                 Photo = entity.Photo
             };
         }

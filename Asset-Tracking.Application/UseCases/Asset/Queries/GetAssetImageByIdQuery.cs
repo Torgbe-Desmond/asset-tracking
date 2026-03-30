@@ -1,18 +1,20 @@
-﻿using Asset_Tracking.Application.Common.Asset;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Asset.Queries
 {
-    public record GetAssetImageByIdQuery(int AssetImageId) : IRequest<AssetImageResponseDto>;
-    public class GetAssetImageByIdHandler(IAssetImageRepository imageRepository) : IRequestHandler<GetAssetImageByIdQuery, AssetImageResponseDto>
+    public record GetAssetImageByIdQuery(int AssetImageId) : IRequest<AssetImageResponseDto?>;
+    public class GetAssetImageByIdHandler(IAssetImageRepository imageRepository) : IRequestHandler<GetAssetImageByIdQuery, AssetImageResponseDto?>
     {
-        public async Task<AssetImageResponseDto> Handle(
+        public async Task<AssetImageResponseDto?> Handle(
             GetAssetImageByIdQuery request,
             CancellationToken cancellationToken)
         {
 
             var image = await imageRepository.GetByIdAsync(request.AssetImageId, cancellationToken);
+
+            if (image == null) return null; 
 
             return new AssetImageResponseDto
             {

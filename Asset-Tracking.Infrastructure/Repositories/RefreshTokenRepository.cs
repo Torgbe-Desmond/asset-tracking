@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Asset_Tracking.Domain.Entities;
+﻿using Asset_Tracking.Domain.Entities;
 using Asset_Tracking.Domain.Interfaces;
 using Asset_Tracking.Infrastructure.Persistence.ApplicationDbContext;
 using Microsoft.EntityFrameworkCore;
@@ -52,13 +49,18 @@ namespace Asset_Tracking.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<RefreshTokenEntity>> GetAllAsync(CancellationToken ct = default)
+        {
+           return await _dbContext.RefreshTokens.AsNoTracking().ToListAsync();
+        }
+
         public async Task<RefreshTokenEntity?> GetByIdAsync(int id)
         {
             return await _dbContext.RefreshTokens
                 .FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task<RefreshTokenEntity?> UpdateAsync(
+        public async Task<bool> UpdateAsync(
             int id,
             RefreshTokenEntity refreshTokenEntity,
             CancellationToken ct = default)
@@ -66,12 +68,12 @@ namespace Asset_Tracking.Infrastructure.Repositories
          
             if (refreshTokenEntity == null)
             {
-                return null;
+                return false;
             }
 
             if (refreshTokenEntity.Id != id)
             {
-                return null;
+                return false;
             }
 
             var existing = await _dbContext.RefreshTokens
@@ -79,7 +81,7 @@ namespace Asset_Tracking.Infrastructure.Repositories
 
             if (existing == null)
             {
-                return null;
+                return false;
             }
 
             
@@ -87,11 +89,11 @@ namespace Asset_Tracking.Infrastructure.Repositories
             {
                 _dbContext.RefreshTokens.Update(refreshTokenEntity);
                 await _dbContext.SaveChangesAsync(ct);
-                return existing;
+                return true;
             }
             catch (DbUpdateException)
             {
-                return null;
+                return false;
             }
         }
     }

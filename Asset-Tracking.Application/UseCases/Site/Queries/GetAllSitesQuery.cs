@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Asset_Tracking.Application.Common.Site;
+using Asset_Tracking.Application.Common.Dtos.Site;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Site.Queries
 {
- 
+
     public record GetAllSitesQuery() : IRequest<List<SiteResponseDto>>;
 
     public class GetAllSitesHandler(ISiteRepository siteRepository) : IRequestHandler<GetAllSitesQuery, List<SiteResponseDto>>

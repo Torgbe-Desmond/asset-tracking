@@ -1,25 +1,20 @@
-﻿using Asset_Tracking.Application.Common.Asset;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Asset.Queries
 {
 
-    public record GetAssetSchedulesDetailsQuery(string ScheduleRepairId) : IRequest<ScheduleRepairDetailResponseDto>;
+    public record GetAssetSchedulesDetailsQuery(string ScheduleRepairId) : IRequest<ScheduleRepairDetailResponseDto?>;
 
-    public class GetAssetSchedulesRepairDetailsQueryHandler(IScheduleRepairRepository scheduleRepairRepository) : IRequestHandler<GetAssetSchedulesDetailsQuery, ScheduleRepairDetailResponseDto>
+    public class GetAssetSchedulesRepairDetailsQueryHandler(IScheduleRepairRepository scheduleRepairRepository) : IRequestHandler<GetAssetSchedulesDetailsQuery, ScheduleRepairDetailResponseDto?>
     {
-        public async Task<ScheduleRepairDetailResponseDto> Handle(GetAssetSchedulesDetailsQuery request, CancellationToken cancellationToken)
+        public async Task<ScheduleRepairDetailResponseDto?> Handle(GetAssetSchedulesDetailsQuery request, CancellationToken cancellationToken)
         {
-
-
-            if (request.ScheduleRepairId == null)
-                throw new ArgumentNullException("ScheduleRepairId is required.", nameof(request.ScheduleRepairId));
 
             var schedule = await scheduleRepairRepository.GetByIdAsync(request.ScheduleRepairId);
 
-            if (schedule == null)
-                throw new KeyNotFoundException("No schedule found.");
+            if (schedule == null) return null!;
 
             var dtos = new ScheduleRepairDetailResponseDto()
             {
@@ -34,9 +29,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
                 AssetId = schedule.AssetId,
                 IsScheduleApproved = schedule.IsScheduleApproved,
                 CreatedBy = schedule.CreatedBy,
-                //DateCreated = schedule.DateCreated,
                 UpdateBy = schedule.UpdateBy,
-                //DateUpdated = schedule.DateUpdated,
                 Asset = schedule.Asset != null ? new AssetDto
                 {
                     AssetId = schedule.Asset.AssetId,
@@ -63,9 +56,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
                     AssetConditionDescription = schedule.Asset.AssetConditionDescription,
                     IsAssetInGoodCondition = schedule.Asset.IsAssetInGoodCondition,
                     IsRepairRequired = schedule.Asset.IsRepairRequired,
-                    //DateCreated = schedule.Asset.DateCreated,
                     CreatedBy = schedule.Asset.CreatedBy,
-                    //DateUpdated = schedule.Asset.DateUpdated,
                 } : null,
 
                 RepairStatus = schedule.RepairStatus != null ? new RepairStatusResponseDto

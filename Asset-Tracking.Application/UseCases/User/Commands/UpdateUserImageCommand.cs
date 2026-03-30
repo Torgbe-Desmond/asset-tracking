@@ -1,4 +1,4 @@
-﻿using Asset_Tracking.Application.Common.User;
+﻿using Asset_Tracking.Application.Common.Dtos.User;
 using Asset_Tracking.Domain.Entities;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
@@ -6,12 +6,12 @@ using MediatR;
 namespace Asset_Tracking.Application.UseCases.User.Commands
 {
     public record UpdateUserImageCommand(int Id, UserImageUpdateRequestDto UserImage)
-          : IRequest<UserImageResponseDto>;
+          : IRequest<bool>;
 
     public class UpdateUserImageHandler(IUserImageRepository userImageRepository)
-        : IRequestHandler<UpdateUserImageCommand, UserImageResponseDto>
+        : IRequestHandler<UpdateUserImageCommand, bool>
     {
-        public async Task<UserImageResponseDto> Handle(UpdateUserImageCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateUserImageCommand request, CancellationToken cancellationToken)
         {
             var dto = request.UserImage;
 
@@ -40,13 +40,8 @@ namespace Asset_Tracking.Application.UseCases.User.Commands
                 Photo = photoBytes,
             };
 
-            await userImageRepository.UpdateAsync(request.Id, entity);
-
-            return new UserImageResponseDto
-            {
-                Id = entity.Id,
-                Photo = entity.Photo
-            };
+            return await userImageRepository.UpdateAsync(request.Id, entity);
+          
         }
     }
 }

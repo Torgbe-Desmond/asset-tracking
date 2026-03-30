@@ -1,6 +1,6 @@
 ﻿using System.Net.Mime;
 using Asp.Versioning;
-using Asset_Tracking.Application.Common.Asset;
+using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Application.UseCases.Asset.Commands;
 using Asset_Tracking.Application.UseCases.Asset.Queries;
 using Asset_Tracking_Api.Common.Models;
@@ -21,6 +21,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// </summary>
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<AssetDisposeResponseDto>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAll(CancellationToken ct)
         {
             var result = await send.Send(new GetAllAssetDisposeQuery(), ct);

@@ -1,4 +1,4 @@
-﻿using Asset_Tracking.Application.Common.Floor;
+﻿using Asset_Tracking.Application.Common.Dtos.Floor;
 using Asset_Tracking.Domain.Entities;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
@@ -38,9 +38,7 @@ namespace Asset_Tracking.Application.UseCases.Floor.Commands
             {
                 FloorId = entity.FloorId,
                 FloorName = entity.FloorName,
-                //CreatedDate = entity.CreatedDate,
                 CreatedBy = entity.CreatedBy,
-                //UpdatedDate = entity.UpdatedDate,
                 UpdatedBy = entity.UpdatedBy
             };
         }

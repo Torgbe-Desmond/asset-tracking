@@ -1,18 +1,18 @@
-﻿using Asset_Tracking.Application.Common.Asset;
-using Asset_Tracking.Application.Common.Building;
-using Asset_Tracking.Application.Common.Floor;
-using Asset_Tracking.Application.Common.Room;
-using Asset_Tracking.Application.Common.Site;
+﻿using Asset_Tracking.Application.Common.Dtos.Asset;
+using Asset_Tracking.Application.Common.Dtos.Building;
+using Asset_Tracking.Application.Common.Dtos.Floor;
+using Asset_Tracking.Application.Common.Dtos.Room;
+using Asset_Tracking.Application.Common.Dtos.Site;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.Asset.Queries
 {
 
-    public record GetAssetCheckOutByIdQuery(int AssetCheckOutId) : IRequest<AssetCheckoutDetailsDto>;
-    public class GetAssetCheckOutByIdHandler(IAssetCheckOutRepository checkOutRepository) : IRequestHandler<GetAssetCheckOutByIdQuery, AssetCheckoutDetailsDto>
+    public record GetAssetCheckOutByIdQuery(int AssetCheckOutId) : IRequest<AssetCheckoutDetailsDto?>;
+    public class GetAssetCheckOutByIdHandler(IAssetCheckOutRepository checkOutRepository) : IRequestHandler<GetAssetCheckOutByIdQuery, AssetCheckoutDetailsDto?>
     {
-        public async Task<AssetCheckoutDetailsDto> Handle(GetAssetCheckOutByIdQuery request, CancellationToken cancellationToken)
+        public async Task<AssetCheckoutDetailsDto?> Handle(GetAssetCheckOutByIdQuery request, CancellationToken cancellationToken)
         {
 
             if (request.AssetCheckOutId < 0)
@@ -20,8 +20,8 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
 
             var assetCheckOut = await checkOutRepository.GetByIdAsync(request.AssetCheckOutId);
 
-            if (assetCheckOut == null)
-                throw new KeyNotFoundException("No asset checkout found.");
+            if (assetCheckOut == null) return null;
+
 
             var dtos = new AssetCheckoutDetailsDto
             {
@@ -29,9 +29,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
                 AssetCheckOutDate = assetCheckOut.AssetCheckOutDate,
                 DueDate = assetCheckOut.DueDate,
                 Notes = assetCheckOut.Notes,
-                //DateCreated = assetCheckOut.DateCreated,
                 CreatedBy = assetCheckOut.CreatedBy,
-                //DateUpdated = assetCheckOut.DateUpdated,
                 UpdatedBy = assetCheckOut.UpdatedBy,
                 AssetId = assetCheckOut.AssetId,
                 StaffId = assetCheckOut.StaffId,
@@ -86,9 +84,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
                      Address = assetCheckOut.Site.Address,
                      DigitalAddress = assetCheckOut.Site.DigitalAddress,
                      Email = assetCheckOut.Site.Email,
-                     //DateCreated = assetCheckOut.Site.DateCreated,
                      CreatedBy = assetCheckOut.Site.CreatedBy,
-                     //DateUpdated = assetCheckOut.Site.DateUpdated,
                      UpdateBy = assetCheckOut.Site.UpdatedBy
                  } : null,
 
@@ -96,9 +92,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
                 {
                     BuildingId = assetCheckOut.Building.BuildingId,
                     BuildingName = assetCheckOut.Building.BuildingName,
-                    //CreatedDate = assetCheckOut.Building.CreatedDate,
                     CreatedBy = assetCheckOut.Building.CreatedBy,
-                    //UpdatedDate = assetCheckOut.Building.UpdatedDate,
                     UpdatedBy = assetCheckOut.Building.UpdatedBy
                 } : null,
 
@@ -106,9 +100,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
                 {
                     FloorId = assetCheckOut.Floor.FloorId,
                     FloorName = assetCheckOut.Floor.FloorName,
-                    //CreatedDate = assetCheckOut.Floor.CreatedDate,
                     CreatedBy = assetCheckOut.Floor.CreatedBy,
-                    //UpdatedDate = assetCheckOut.Floor.UpdatedDate,
                     UpdatedBy = assetCheckOut.Floor.UpdatedBy
                 } : null,
 
@@ -116,9 +108,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
                 {
                     RoomId = assetCheckOut.Room.RoomId,
                     RoomName = assetCheckOut.Room.RoomName,
-                    //CreatedDate = assetCheckOut.Room.CreatedDate,
                     CreatedBy = assetCheckOut.Room.CreatedBy,
-                    //UpdatedDate = assetCheckOut.Room.UpdatedDate,
                     UpdatedBy = assetCheckOut.Room.UpdatedBy
                 } : null,
 

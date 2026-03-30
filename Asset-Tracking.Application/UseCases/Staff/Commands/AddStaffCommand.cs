@@ -1,4 +1,4 @@
-﻿using Asset_Tracking.Application.Common.Staff;
+﻿using Asset_Tracking.Application.Common.Dtos.Staff;
 using Asset_Tracking.Domain.Entities;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;

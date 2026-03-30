@@ -1,11 +1,11 @@
-﻿using Asset_Tracking.Application.Common.User;
+﻿using Asset_Tracking.Application.Common.Dtos.User;
 using Asset_Tracking.Domain.Interfaces;
 using MediatR;
 
 namespace Asset_Tracking.Application.UseCases.User.Queries
 {
 
-    public record GetAllUserImagesQuery(int Id)
+    public record GetAllUserImagesQuery()
      : IRequest<List<UserImageResponseDto>>;
 
     public class GetAllUserImagesHandler(IUserImageRepository userImageRepository)
@@ -17,7 +17,7 @@ namespace Asset_Tracking.Application.UseCases.User.Queries
 
             var dtos = allUserImages.Select(allUserImage=>  new UserImageResponseDto
             {
-                Id = allUserImage.Id,
+                UserImageId = allUserImage.UserImageId,
                 Photo = allUserImage.Photo
             }).ToList();
 
