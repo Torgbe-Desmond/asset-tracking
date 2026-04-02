@@ -25,9 +25,7 @@ namespace Asset_Tracking.Application.UseCases.Asset.Queries
                 DisposeDate = assetDispose.DisposeDate,
                 DisposeTo = assetDispose.DisposeTo,
                 Notes = assetDispose.Notes,
-                //DateCreated = assetDispose.DateCreated,
                 CreatedBy = assetDispose.CreatedBy,
-                //DateUpdated = assetDispose.DateUpdated,
                 UpdatedBy = assetDispose.UpdatedBy,
                 AssetId = assetDispose.AssetId
             }).ToList();

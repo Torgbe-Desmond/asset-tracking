@@ -1,11 +1,12 @@
-﻿using System.Net.Mime;
-using Asp.Versioning;
+﻿using Asp.Versioning;
 using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Application.UseCases.Asset.Commands;
 using Asset_Tracking.Application.UseCases.Asset.Queries;
 using Asset_Tracking_Api.Common.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 
 namespace Asset_Tracking_Api.Controllers.v1
 {
@@ -20,6 +21,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// returns all existing asset checkouts
         /// </summary>
+        [Authorize]
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<AssetCheckOutResponseDto>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -40,6 +42,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// returns an existing asset checkouts by id
         /// </summary>
+        [Authorize]
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(ApiResponse<AssetCheckOutResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -68,6 +71,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// create a new asset checkout
         /// </summary>
+        [Authorize]
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<AssetCheckOutResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status400BadRequest)]
@@ -87,6 +91,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// updates an existing asset checkout by id
         /// </summary>
+        [Authorize]
         [HttpPatch("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -110,6 +115,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// deletes an existing asset checkout by id
         /// </summary>
+        [Authorize]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

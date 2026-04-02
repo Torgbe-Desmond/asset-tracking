@@ -4,5 +4,55 @@
         <name>Asset-Tracking.Domain</name>
     </assembly>
     <members>
+        <member name="T:Asset_Tracking.Domain.Entities.ApplicationUser">
+            <summary>
+            Custom ApplicationUser that extends IdentityUser for the Asset Tracking System.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Domain.Entities.ApplicationUser.FirstName">
+            <summary>
+            User's first name.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Domain.Entities.ApplicationUser.LastName">
+            <summary>
+            User's last name.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Domain.Entities.ApplicationUser.TitleId">
+            <summary>
+            Foreign key referencing the user's job title.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Domain.Entities.ApplicationUser.UserImageId">
+            <summary>
+            Foreign key to the primary user image/profile picture.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Domain.Entities.ApplicationUser.IsActive">
+            <summary>
+            Indicates whether the user account is active.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Domain.Entities.ApplicationUser.CreatedAt">
+            <summary>
+            Date and time when the user was created.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Domain.Entities.ApplicationUser.RefreshTokens">
+            <summary>
+            Refresh tokens issued to this user for JWT authentication.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Domain.Entities.ApplicationUser.UserImages">
+            <summary>
+            All images associated with this user.
+            </summary>
+        </member>
+        <member name="P:Asset_Tracking.Domain.Entities.ApplicationUser.FullName">
+            <summary>
+            Returns the user's full name by combining FirstName and LastName.
+            </summary>
+        </member>
     </members>
 </doc>

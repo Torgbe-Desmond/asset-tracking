@@ -1,11 +1,12 @@
-﻿using System.Net.Mime;
-using Asp.Versioning;
+﻿using Asp.Versioning;
 using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Application.UseCases.Asset.Commands;
 using Asset_Tracking.Application.UseCases.Asset.Queries;
 using Asset_Tracking_Api.Common.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 
 namespace Asset_Tracking_Api.Controllers.v1
 {
@@ -19,6 +20,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// returns all existing asset disposals
         /// </summary>
+        [Authorize]
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<AssetDisposeResponseDto>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -38,6 +40,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// returns am existing asset disposal by id
         /// </summary>
+        [Authorize]
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(ApiResponse<AssetDisposeResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -66,6 +69,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// creates a new asset disposals
         /// </summary>
+        [Authorize]
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<AssetDisposeResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status400BadRequest)]
@@ -86,6 +90,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// updates am existing asset disposal by id
         /// </summary>
+        [Authorize]
         [HttpPatch("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -109,6 +114,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// deletes am existing asset disposal by id
         /// </summary>
+        [Authorize]
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]

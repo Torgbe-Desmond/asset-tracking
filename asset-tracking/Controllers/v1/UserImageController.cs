@@ -1,11 +1,12 @@
-﻿using System.Net.Mime;
-using Asp.Versioning;
+﻿using Asp.Versioning;
 using Asset_Tracking.Application.Common.Dtos.User;
 using Asset_Tracking.Application.UseCases.User.Commands;
 using Asset_Tracking.Application.UseCases.User.Queries;
 using Asset_Tracking_Api.Common.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 
 namespace Asset_Tracking.Controllers.v1
 {
@@ -19,6 +20,7 @@ namespace Asset_Tracking.Controllers.v1
         /// <summary>
         /// returns all user images
         /// </summary>
+        [Authorize]
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<UserImageResponseDto>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -38,6 +40,7 @@ namespace Asset_Tracking.Controllers.v1
         /// <summary>
         /// returns user image by id
         /// </summary>
+        [Authorize]
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(ApiResponse<UserImageResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -66,6 +69,7 @@ namespace Asset_Tracking.Controllers.v1
         /// <summary>
         /// Creates a new user image
         /// </summary>
+        [Authorize]
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<UserImageResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -91,6 +95,7 @@ namespace Asset_Tracking.Controllers.v1
         /// <summary>
         /// updates an existing asset category by id
         /// </summary>
+        [Authorize]
         [HttpPatch("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -116,6 +121,7 @@ namespace Asset_Tracking.Controllers.v1
         /// <summary>
         /// deletes an existing user image
         /// </summary>
+        [Authorize]
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

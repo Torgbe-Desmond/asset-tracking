@@ -1,12 +1,13 @@
-﻿using System.Net.Mime;
-using Asp.Versioning;
+﻿using Asp.Versioning;
 using Asset_Tracking.Application.Common.Dtos.Asset;
 using Asset_Tracking.Application.UseCases.Asset.Commands;
 using Asset_Tracking.Application.UseCases.Asset.Queries;
 using Asset_Tracking.Domain.Interfaces;
 using Asset_Tracking_Api.Common.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 
 namespace Asset_Tracking_Api.Controllers.v1
 {
@@ -20,6 +21,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// Retrieves all asset repair statuses.
         /// </summary>
+        [Authorize]
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<RepairStatusResponseDto>>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll(CancellationToken ct)
@@ -38,6 +40,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// Retrieves a specific asset repair status by ID.
         /// </summary>
+        [Authorize]
         [HttpGet("{id:int}")]
         [ProducesResponseType(typeof(ApiResponse<RepairStatusResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -66,6 +69,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// Creates a new asset repair status.
         /// </summary>
+        [Authorize]
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<RepairStatusResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status400BadRequest)]
@@ -85,6 +89,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// Updates an existing asset repair status.
         /// </summary>
+        [Authorize]
         [HttpPatch("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -107,6 +112,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// Delete an existing asset repair status.
         /// </summary>
+        [Authorize]
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]

@@ -8,7 +8,7 @@ namespace Asset_Tracking.Domain.Entities
         [Key]
         public int Id { get; set; }
 
-        [MaxLength(900)]
+        [MaxLength(450)]
         [ForeignKey(nameof(User))]
         public string? UserId { get; set; }
 

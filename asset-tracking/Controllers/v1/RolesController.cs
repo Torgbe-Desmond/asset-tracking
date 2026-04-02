@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning;
 using Asset_Tracking.Application.Common.Dtos.Role;
 using Asset_Tracking.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
@@ -24,6 +25,7 @@ public class RolesController : ControllerBase
     }
 
     // Create a new role
+    [Authorize]
     [HttpPost("create")]
     public async Task<IActionResult> CreateRole([FromBody] string roleName)
     {
@@ -39,6 +41,7 @@ public class RolesController : ControllerBase
     }
 
     // Assign role to a user
+    [Authorize]
     [HttpPost("assign")]
     public async Task<IActionResult> AssignRole([FromBody] AssignRoleDto dto)
     {
@@ -54,6 +57,7 @@ public class RolesController : ControllerBase
     }
 
     // List all roles
+    [Authorize]
     [HttpGet]
     public IActionResult ListRoles()
     {

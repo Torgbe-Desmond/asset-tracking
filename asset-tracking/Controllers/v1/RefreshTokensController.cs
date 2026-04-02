@@ -1,11 +1,12 @@
-﻿using System.Net.Mime;
-using Asp.Versioning;
+﻿using Asp.Versioning;
 using Asset_Tracking.Application.Common.Dtos.RefreshToken;
 using Asset_Tracking.Application.UseCases.RefreshToken.Commands;
 using Asset_Tracking.Application.UseCases.RefreshToken.Queries;
 using Asset_Tracking_Api.Common.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 
 namespace Asset_Tracking_Api.Controllers.v1
 {
@@ -19,6 +20,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// Gets a refresh token by its ID
         /// </summary>
+        [Authorize]
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ApiResponse<RefreshTokenResponseDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -49,6 +51,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// Creates a new refresh token
         /// </summary>
+        [Authorize]
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponse<RefreshTokenResponseDto>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status400BadRequest)]
@@ -74,6 +77,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// Updates an existing refresh token (usually for revocation or extension)
         /// </summary>   
+        [Authorize]
         [HttpPatch("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ApiResponse<ProblemDetails>), StatusCodes.Status404NotFound)]
@@ -99,6 +103,7 @@ namespace Asset_Tracking_Api.Controllers.v1
         /// <summary>
         /// Deletes a refresh token
         /// </summary>
+        [Authorize]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Delete(

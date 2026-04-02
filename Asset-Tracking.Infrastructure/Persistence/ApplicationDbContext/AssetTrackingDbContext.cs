@@ -1,7 +1,7 @@
-﻿using Asset_Tracking.Domain.Entities;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Asset_Tracking.Domain.Entities;
 
 namespace Asset_Tracking.Infrastructure.Persistence.ApplicationDbContext
 {
@@ -13,9 +13,8 @@ namespace Asset_Tracking.Infrastructure.Persistence.ApplicationDbContext
         }
 
         // =================================================================
-        // Custom / User-defined Entities (Non-Identity)
+        // DbSets
         // =================================================================
-
         public DbSet<AssetEntity> Assets { get; set; }
         public DbSet<AssetCategoryEntity> AssetCategories { get; set; }
         public DbSet<AssetStatusEntity> AssetStatuses { get; set; }
@@ -49,23 +48,27 @@ namespace Asset_Tracking.Infrastructure.Persistence.ApplicationDbContext
         // =================================================================
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);    
+            base.OnModelCreating(modelBuilder);
 
-
-            modelBuilder.Entity<ApplicationUser>().ToTable("Users");                      
-            modelBuilder.Entity<IdentityRole>().ToTable("Role");                        
-            modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");         
-            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");       
-            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");        
-            modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");        
-            modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
-
-            // Apply other custom entity configurations
+            // Apply any IEntityTypeConfiguration classes
             modelBuilder.ApplyConfigurationsFromAssembly(
                 typeof(AssetTrackingDbContext).Assembly
             );
 
-            // Table mappings for your custom entities
+            // ======================
+            // Identity Table Mappings (Custom names)
+            // ======================
+            modelBuilder.Entity<ApplicationUser>().ToTable("Users");
+            modelBuilder.Entity<IdentityRole>().ToTable("Role");
+            modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
+            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
+            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
+            modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
+            modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
+
+            // ======================
+            // Custom Entity Table Mappings
+            // ======================
             modelBuilder.Entity<AssetEntity>().ToTable("Asset");
             modelBuilder.Entity<AssetCategoryEntity>().ToTable("AssetCategory");
             modelBuilder.Entity<AssetStatusEntity>().ToTable("AssetStatus");
@@ -94,13 +97,40 @@ namespace Asset_Tracking.Infrastructure.Persistence.ApplicationDbContext
             modelBuilder.Entity<RefreshTokenEntity>().ToTable("RefreshTokens");
             modelBuilder.Entity<UserImageEntity>().ToTable("UserImage");
 
-            // Optional: Configure RefreshToken relationship
+            // ======================
+            // Critical Configuration for RefreshTokenEntity
+            // ======================
             modelBuilder.Entity<RefreshTokenEntity>(entity =>
             {
+                entity.Property(rt => rt.UserId)
+                      .HasMaxLength(450)      // ← Must match Identity User Id length
+                      .IsRequired();
+
                 entity.HasOne(rt => rt.User)
                       .WithMany(u => u.RefreshTokens)
                       .HasForeignKey(rt => rt.UserId)
                       .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasIndex(rt => rt.UserId);
+                entity.HasIndex(rt => rt.GeneratedRefreshToken);
+            });
+
+            // UserImageEntity Configuration (if it has UserId property)
+            modelBuilder.Entity<UserImageEntity>(entity =>
+            {
+                // Only apply if UserId property exists
+                var userIdProperty = typeof(UserImageEntity).GetProperty("UserId");
+                if (userIdProperty != null)
+                {
+                    entity.Property("UserId")
+                          .HasMaxLength(450)
+                          .IsRequired();
+
+                    entity.HasOne("User")
+                          .WithMany("UserImages")
+                          .HasForeignKey("UserId")
+                          .OnDelete(DeleteBehavior.Cascade);
+                }
             });
         }
     }

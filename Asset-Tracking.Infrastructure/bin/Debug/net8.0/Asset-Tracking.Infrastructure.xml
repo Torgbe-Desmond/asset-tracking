@@ -4,16 +4,28 @@
         <name>Asset-Tracking.Infrastructure</name>
     </assembly>
     <members>
-        <member name="T:Asset_Tracking.Infrastructure.Migrations.initialCreate">
+        <member name="T:Asset_Tracking.Infrastructure.Migrations.initial">
             <inheritdoc />
         </member>
-        <member name="M:Asset_Tracking.Infrastructure.Migrations.initialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:Asset_Tracking.Infrastructure.Migrations.initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:Asset_Tracking.Infrastructure.Migrations.initialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:Asset_Tracking.Infrastructure.Migrations.initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:Asset_Tracking.Infrastructure.Migrations.initialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:Asset_Tracking.Infrastructure.Migrations.initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Asset_Tracking.Infrastructure.Migrations.initial1">
+            <inheritdoc />
+        </member>
+        <member name="M:Asset_Tracking.Infrastructure.Migrations.initial1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Asset_Tracking.Infrastructure.Migrations.initial1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Asset_Tracking.Infrastructure.Migrations.initial1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

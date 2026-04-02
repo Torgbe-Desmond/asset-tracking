@@ -1,10 +1,14 @@
 ﻿using Asset_Tracking.Domain;
+using Asset_Tracking.Domain.Entities;
 using Asset_Tracking.Domain.Interfaces;
+using Asset_Tracking.Infrastructure.Identity;
 using Asset_Tracking.Infrastructure.Persistence.ApplicationDbContext;
 using Asset_Tracking.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Asset_Tracking.Infrastructure
 {
@@ -18,8 +22,25 @@ namespace Asset_Tracking.Infrastructure
             var connectionString = configuration.GetConnectionString("DefaultConnection")
                ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
+            //services.AddDbContext<AssetTrackingDbContext>(options =>
+            //    options.UseSqlServer(connectionString));
             services.AddDbContext<AssetTrackingDbContext>(options =>
-                options.UseSqlServer(connectionString));
+            {
+                options.UseSqlServer(connectionString)
+                       .EnableSensitiveDataLogging()       
+                       .LogTo(Console.WriteLine, LogLevel.Information);  
+            });
+
+            // --- ADD THIS SECTION ---
+            services.AddIdentityCore<ApplicationUser>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 8;
+            })
+            .AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<AssetTrackingDbContext>()
+            .AddSignInManager()
+            .AddDefaultTokenProviders();
 
             services.AddScoped<IAssetCategoryRepository , AssetCategoryRepository>();
             services.AddScoped<IAssetCheckInRepository, AssetCheckInRepository>();
@@ -44,6 +65,11 @@ namespace Asset_Tracking.Infrastructure
             services.AddScoped<ITitleRepository, TitleRepository>();
             services.AddScoped<IUserImageRepository, UserImageRepository>();
             services.AddScoped<IMaintenanceStatusRepository, MaintenanceStatusRepository>();
+
+            // Jwt Service
+            services.AddScoped<IJwtService, JwtService>();
+
+
 
             return services;
         }
